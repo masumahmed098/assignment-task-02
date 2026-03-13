@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Penguin Fashion</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link type="image/png" sizes="32x32" rel="icon" href=".../icons8-penguin-softteal-32.png">  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#e9a830',
+              green: '#4a7c3f',
+              darkgreen: '#A4BC46',
+              bg: '#f5f0e8',
+              dark: '#1a1a2e',
+            }
+          },
+          fontFamily: {
+            display: ['Oswald', 'sans-serif'],
+            body: ['Nunito', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .dot-pattern {
+        background-image: radial-gradient(circle, #bbb 1px, transparent 1px);
+        background-size: 14px 14px;
+      }
+    }
+  </style>
+</head>
+<body class="font-body bg-white">
+
+  <!-- NAVBAR -->
+
+  
+  <nav class="bg-white shadow-sm top-0 z-50 sticky">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+       <!-- <div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white font-bold font-display text-lg">P</div>*/-->
+        <img src="./assets/icons/logo.png" class="w-15 h-10">
+        <div class="flex ">
+          <img src="./assets/icons/banner_dot.png" class="w-16  ">
+        </div>
+    
+      </div>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex items-center gap-8 text-gray-700 font-semibold">
+        <li><a href="#" class="hover:text-[#A4BC46] transition-colors duration-200">Home</a></li>
+        <li><a href="#products" class="hover:text-[#A4BC46] transition-colors duration-200">Product</a></li>
+        <li><a href="#features" class="hover:text-[#A4BC46] transition-colors duration-200">About us</a></li>
+        <li><a href="#" class="hover:text-[#A4BC46] transition-colors duration-200">Contact us</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer">
+        <span class="block w-6 h-0.5 bg-gray-700 rounded"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 rounded"></span>
+        <span class="block w-6 h-0.5 bg-gray-700 rounded"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 bg-white border-t border-gray-100 flex flex-col gap-3">
+      <a href="#" class="block py-1 text-gray-700 font-semibold hover:text-brand-yellow transition-colors">Home</a>
+      <a href="#products" class="block py-1 text-gray-700 font-semibold hover:text-brand-yellow transition-colors">Product</a>
+      <a href="#features" class="block py-1 text-gray-700 font-semibold hover:text-brand-yellow transition-colors">About us</a>
+      <a href="#" class="block py-1 text-gray-700 font-semibold hover:text-brand-yellow transition-colors">Contact us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class=" overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center gap-10">
+
+      <!-- Left -->
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight mb-5">
+          <span class="text-brand-yellow">Be the Penguins</span><br/>
+          <span class="text-gray-900">of Winter</span>
+        </h1>
+        <p class="text-gray-500 mb-8 max-w-xs mx-auto md:mx-0 leading-relaxed">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <button class="bg-[#A4BC46] hover:bg-brand-darkgreen text-white font-bold font-body px-6 py-3 rounded-lg inline-flex items-center gap-2 mx-auto md:mx-0 transition-colors duration-200">
+          <img src="./assets/icons/shopping-cart 1.png" class="w-8 h-8"> Buy Now
+        </button>
+      </div>
+
+      <!-- Right -->
+      <div class="flex-1 flex justify-center relative">
+        <div class="dot-pattern absolute right-0 bottom-0 w-40 h-40 opacity-30 pointer-events-none"></div>
+        <div class="dot-pattern absolute left-0 top-0 w-28 h-28 opacity-20 pointer-events-none"></div>
+        <div class="relative w-64 h-64 md:w-80 md:h-80">
+          
+            <!-- Replace with your hero image -->
+            <img src="./assets/images/model.png" alt="Hero Model" class="w-full h-full object-cover"/>
+          
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+ 
+
+  <!-- PRODUCTS -->
+  <section id="products" class="max-w-6xl mx-auto px-4 py-16">
+
+    <!-- Woman Jacket -->
+    <div class="mb-16">
+      <h2 class="font-display text-3xl font-bold uppercase tracking-wide text-brand-dark border-l-4 border-brand-yellow pl-4 mb-8">
+        Woman Jacket
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="rounded-2xl bg-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-gray-200 h-56 overflow-hidden m-[10px] rounded-2xl">
+            <!-- Replace with product image -->
+            <img src="./assets/images/jacket-1.png" alt="Yellow Coat Jacket" class="w-[200px] h-[200px] m-auto "/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Yellow Coat Jacket</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-display text-2xl font-bold text-brand-yellow">$234</span>
+              <button class="bg-[#A4BC46] text-white text-sm font-bold font-body px-4 py-2 rounded-lg inline-flex items-center gap-1.5 transition-colors duration-200">
+                <img src="./assets/icons/shopping-cart 1.png" class="w-5 h-5">Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-gray-200 h-56 overflow-hidden m-[10px] rounded-2xl">
+            <img src="./assets/images/jacket-2.png" alt="Ladies Jacket" class="w-[200px] h-[200px] m-auto mt-[5px]"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Ladies Jacket</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-display text-2xl font-bold text-brand-yellow">$234</span>
+              <button class="bg-[#A4BC46]  text-white text-sm font-bold font-body px-4 py-2 rounded-lg inline-flex items-center gap-1.5 transition-colors duration-200">
+                <img src="./assets/icons/shopping-cart 1.png" class="w-5 h-5">Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-gray-200 h-56 overflow-hidden m-[10px] rounded-2xl">
+            <img src="./assets/images/jacket-3.png" alt="Woman Leather Jacket" class="w-[200px] h-[200px] m-auto mt-[5px]"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Woman Leather Jacket</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-display text-2xl font-bold text-brand-yellow">$234</span>
+              <button class="bg-[#A4BC46] text-white text-sm font-bold font-body px-4 py-2 rounded-lg inline-flex items-center gap-1.5 transition-colors duration-200">
+                <img src="./assets/icons/shopping-cart 1.png" class="w-5 h-5">Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Man Jacket -->
+    <div>
+      <h2 class="font-display text-3xl font-bold uppercase tracking-wide text-brand-dark border-l-4 border-brand-yellow pl-4 mb-8">
+        Man Jacket
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="rounded-2xl bg-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-gray-200 h-56 overflow-hidden m-[10px] rounded-2xl">
+            <img src="./assets/images/jacket-4.png" alt="Snowboard Jacket Mens" class="w-[200px] h-[200px] m-auto mt-[5px]"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Snowboard Jacket Mens</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-display text-2xl font-bold text-brand-yellow">$234</span>
+              <button class="bg-[#A4BC46]  text-white text-sm font-bold font-body px-4 py-2 rounded-lg inline-flex items-center gap-1.5 transition-colors duration-200">
+                <img src="./assets/icons/shopping-cart 1.png" class="w-5 h-5">Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-gray-200 h-56 overflow-hidden m-[10px] rounded-2xl">
+            <img src="./assets/images/jacket-5.png" alt="Man Leather Jackets" class="w-[200px] h-[200px] m-auto mt-[5px]"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Man Leather Jackets</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-display text-2xl font-bold text-brand-yellow">$234</span>
+              <button class="bg-[#A4BC46]  text-white text-sm font-bold font-body px-4 py-2 rounded-lg inline-flex items-center gap-1.5 transition-colors duration-200">
+                <img src="./assets/icons/shopping-cart 1.png" class="w-5 h-5">Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div class="bg-gray-200 h-56 overflow-hidden m-[10px] rounded-2xl">
+            <img src="./assets/images/jacket-6.png" alt="Man Casual Jackets" class="w-[200px] h-[200px] m-auto mt-[5px]"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Man Casual Jackets</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-display text-2xl font-bold text-brand-yellow">$234</span>
+              <button class="bg-[#A4BC46] hover: text-white text-sm font-bold font-body px-4 py-2 rounded-lg inline-flex items-center gap-1.5 transition-colors duration-200">
+                <img src="./assets/icons/shopping-cart 1.png" class="w-5 h-5">Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+
+        <!-- Features List -->
+        <div class="flex-1 flex flex-col gap-6 w-full">
+
+          <div class="flex items-start gap-4 pb-6 border-b border-gray-200">
+            <div class="w-16 h-16 bg-[#A4BC46] rounded-xl shadow-sm flex items-center justify-center text-2xl flex-shrink-0">
+
+              <img src="./assets/icons/house.png">
+            </div>
+            <div>
+              <h3 class="font-bold text-lg text-gray-900 mb-1">Find the Perfect Fit</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Everybody is different, which is why we offer styles for every body.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 pb-6 border-b border-gray-200">
+            <div class="w-16 h-16 bg-[#A4BC46] rounded-xl shadow-sm flex items-center justify-center text-2xl flex-shrink-0">
+              <img src="./assets/icons/box.png">
+            </div>
+            <div>
+              <h3 class="font-bold text-lg text-gray-900 mb-1">Free Exchanges</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">One of the many reasons you can shop with peace of mind.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-16 h-16 bg-[#A4BC46] rounded-xl shadow-sm flex items-center justify-center text-2xl flex-shrink-0">
+              <img src="./assets/icons/question.png">
+
+            </div>
+            <div>
+              <h3 class="font-bold text-lg text-gray-900 mb-1">Contact Our Seller</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">They are here to help you. That's quite literally what we pay them for.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Illustration -->
+        <div>
+          <!-- Replace with your illustration -->
+          <img src="./assets/images/shopping.png" alt="Shopping Illustration" class="rounded-2xl w-full max-w-md object-cover shadow-lg"/>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+<!-- FOOTER -->
+
+  <!--<footer class="bg-brand-dark py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🐧</span>
+        <span class="font-display font-bold text-lg">
+          <span class="text-brand-yellow">Penguin</span>
+          <span class="text-white"> Fashion</span>
+        </span>
+      </div>
+      <p class="text-gray-400 text-sm text-center">© 2024 Penguin Fashion. All rights reserved.</p>
+      <div class="flex gap-5 text-gray-400 text-sm">
+        <a href="#" class="hover:text-brand-yellow transition-colors duration-200">Home</a>
+        <a href="#" class="hover:text-brand-yellow transition-colors duration-200">Product</a>
+        <a href="#" class="hover:text-brand-yellow transition-colors duration-200">About</a>
+        <a href="#" class="hover:text-brand-yellow transition-colors duration-200">Contact</a>
+      </div>
+    </div>
+  </footer> -->
+  
+  
+
+</body>
+</html>
